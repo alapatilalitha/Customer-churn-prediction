@@ -1,43 +1,44 @@
-Customer Churn Prediction API
+#  Customer Churn Prediction API
 
-Production-Ready ML Service with Docker, CI/CD & Cloud Deployment
+## Production-Ready ML Service with Docker, CI/CD & Cloud Deployment
 
-Business Problem
+##  Business Problem
 
 Customer churn significantly impacts revenue in telecom businesses.
 
 The objective of this system is to predict whether a customer is likely to churn so that businesses can:
 
-Identify high-risk customers
+- Identify high-risk customers
 
-Design targeted retention campaigns
+- Design targeted retention campaigns
 
-Reduce revenue loss
+- Reduce revenue loss
 
-Improve customer lifetime value
+- Improve customer lifetime value
 
-Model Details
+## Model Details
 
-Algorithm: Scikit-learn Classification Model
+- **Algorithm:** Scikit-learn Classification Model
 
-Target: Binary classification (Churn / No Churn)
+- **Target:** Binary classification (Churn / No Churn)
 
-Serialization: joblib
+- **Serialization:** joblib
 
-Served via FastAPI REST API
+- **API Framework:** FastAPI
 
-Version-controlled model releases
+- **Model Versioning:** Enabled
 
 The model is trained on the IBM Telco Customer Churn dataset.
 
-Model Evaluation
+## Model Evaluation
+
 Dataset
 
-Source: IBM Telco Customer Churn Dataset
+**Source:** IBM Telco Customer Churn Dataset
 
-Type: Binary classification
+**Type:** Binary classification
 
-Target variable: Churn
+**Target variable:** Churn
 
 | Metric    | Score |
 | --------- | ----- |
@@ -49,19 +50,19 @@ Target variable: Churn
 
 Metrics may vary slightly depending on random state and preprocessing.
 
-Why These Metrics Matter
+## Why These Metrics Matter
 
-Accuracy measures overall correctness.
+- Accuracy measures overall correctness.
 
-Recall is critical because missing churn customers directly impacts revenue.
+- Recall is critical because missing churn customers directly impacts revenue.
 
-F1 Score balances precision and recall.
+- F1 Score balances precision and recall.
 
-ROC-AUC measures class separation capability.
+- ROC-AUC measures class separation capability.
 
 This demonstrates thoughtful evaluation beyond simple accuracy reporting.
 
-System Architecture
+## System Architecture
 
 Client Request
 ↓
@@ -94,16 +95,16 @@ Render Deployment
 | Logging          | Structured JSON logging       |
 | Observability    | Request ID + Latency tracking |
 
-Live Deployment
-Production API
+## Live Deployment
+**Production API**
 
 https://churn-api-fayv.onrender.com
 
-Swagger Documentation
+**Swagger Documentation**
 
 https://churn-api-fayv.onrender.com/docs
 
-Health Endpoint
+**Health Endpoint**
 
 https://churn-api-fayv.onrender.com/health
 
@@ -163,29 +164,29 @@ Example Request:
   "model_version": "1.1.0"
 }
 
-Production Engineering Features
+## Production Engineering Features
 
 This project includes:
 
-Structured JSON logging
+- Structured JSON logging
 
-Unique request ID middleware
+- Unique request ID middleware
 
-Latency tracking middleware
+- Latency tracking middleware
 
-Model version exposure in responses
+- Model version exposure in responses
 
-Docker multi-platform builds (linux/amd64)
+- Docker multi-platform builds (linux/amd64)
 
-Automated CI/CD pipeline
+- Automated CI/CD pipeline
 
-Cloud deployment on Render
+- Cloud deployment on Render
 
-Version-controlled Docker image tags
+- Version-controlled Docker image tags
 
 This demonstrates production-level ML system design.
 
-Docker
+## Docker
 
 Docker Hub Repository:
 
@@ -223,24 +224,24 @@ On every push to main:
 
 This ensures reproducible, automated deployments.
 
-Local Development
+## Local Development
 
-Clone repository:
+**Clone repository:**
 git clone https://github.com/alapatilalitha/Customer-churn-prediction.git
 cd Customer-churn-prediction
 
-Create virtual environment:
+**Create virtual environment:**
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-Run locally:
+**Run locally:**
 uvicorn app:app --reload
 
-Access Swagger:
+**Access Swagger:**
 http://127.0.0.1:8000/docs
 
-Repository Structure
+**Repository Structure**
 Customer-churn-prediction/
 │
 ├── app.py
