@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+
+# Logs
+*.log
+
+# MLflow
+mlruns/
+
+# Mac files
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+*.tar
+
+# VS Code
+.vscode/
