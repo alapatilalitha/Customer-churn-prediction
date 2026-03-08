@@ -64,25 +64,11 @@ This demonstrates thoughtful evaluation beyond simple accuracy reporting.
 
 ## System Architecture
 
-Client Request
-↓
-FastAPI Service
-↓
-Model Inference
-↓
-Structured JSON Response
+Client Request → FastAPI Service → Model Inference → Structured JSON Response
 
-CI/CD Flow
+## CI/CD Flow
 
-GitHub
-↓
-GitHub Actions
-↓
-Docker Image Build (linux/amd64)
-↓
-Docker Hub
-↓
-Render Deployment
+GitHub → GitHub Actions → Docker Image Build (linux/amd64) → Docker Hub → Render Deployment
 
 | Layer            | Technology                    |
 | ---------------- | ----------------------------- |
@@ -108,8 +94,8 @@ https://churn-api-fayv.onrender.com/docs
 
 https://churn-api-fayv.onrender.com/health
 
-API Endpoints
-1. Root Endpoint
+**API Endpoints**
+- Root Endpoint
 
 GET /
 
@@ -119,7 +105,7 @@ Response:
   "version": "1.1.0"
 }
 
-2. Health Check
+-  Health Check
 
 GET /health
 
@@ -132,7 +118,7 @@ Response:
   "model_version": "1.1.0"
 }
 
-3. Prediction Endpoint
+- Prediction Endpoint
 
 POST /predict
 
@@ -188,14 +174,14 @@ This demonstrates production-level ML system design.
 
 ## Docker
 
-Docker Hub Repository:
+**Docker Hub Repository:**
 
 https://hub.docker.com/r/lalitha1020/churn-api
 
-Pull image:
+**Pull image:**
 docker pull lalitha1020/churn-api:1.1.0
 
-Build manually:
+**Build manually:**
 docker buildx build \
   --platform linux/amd64 \
   -t lalitha1020/churn-api:1.1.0 \
@@ -203,24 +189,24 @@ docker buildx build \
 
   CI/CD Pipeline
 
-Repository:
+**Repository:**
 
 https://github.com/alapatilalitha/Customer-churn-prediction
 
-Workflow file:
+**Workflow file:**
 .github/workflows/docker.yml
 
 On every push to main:
 
-1.GitHub Actions triggers
+- GitHub Actions triggers
 
-2.Docker image builds automatically
+- Docker image builds automatically
 
-3.Image pushes to Docker Hub
+- Image pushes to Docker Hub
 
-4.Render pulls updated image
+- Render pulls updated image
 
-5.Service redeploys
+- Service redeploys
 
 This ensures reproducible, automated deployments.
 
